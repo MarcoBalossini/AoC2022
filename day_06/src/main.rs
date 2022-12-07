@@ -17,11 +17,7 @@ fn main() {
         .windows(window)
         .map(|w| {
             let set = w.iter().collect::<HashSet<&char>>();
-            if set.len() == window {
-                true
-            } else {
-                false
-            }
+            set.len() == window
         })
         .enumerate()
         .find(|(_, x)| *x==true);
